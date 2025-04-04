@@ -12,6 +12,10 @@ object entrega {
 */
 
 
+
+
+//MENSAJEROS: dan su peso y dicen si pueden llamar
+
 object chucknorris{
 
     method peso(){
@@ -20,10 +24,13 @@ object chucknorris{
     method llamada(){
         return true
     }
-    /*method puedeLlevar(paquete){
-        return paquete.pagado()
-    }*/
+    
     method vehiculo(){}
+    /*
+        Pregunta: lincoln es el unico que manda el mensaje vehiculo(), 
+                  es necesario que neo y chuck entiendan vehiculo() ya que todos son mensajero?
+                  o solo se debe hacer si un objeto tercero llama a mensajero.vehiculo() 
+    */
 }
 object neo{
     
@@ -38,7 +45,7 @@ object neo{
     method llamada(){
         return paquete.pagado() //si el paquete no esta pagado, neo no puede cargar credito por ende no puede llamar 
     }
-    method vehiculo(){}
+    method vehiculo(){}//lo mismo que chuck
 }
 
 object lincolnhawk{ 
@@ -62,12 +69,15 @@ object lincolnhawk{
     }
     
 }
+
+//VEHICULOS: usados solo por lincoln, saben decir su peso 
 object bicicleta{
     
     method peso(){
         return 10
     }
-    method acoplado(){}
+    
+    
 }
 object camion {
     var acoplado =1
@@ -78,6 +88,15 @@ object camion {
         acoplado = _acoplado
     }
 }
+/*
+    PREGUNTA: lincoln solo haria el llamado vehiculo.peso() ,es necesario que bicicleta 
+              tambien entienda el mensaje acoplado() aunque lincoln nunca lo llame?
+              
+
+*/
+
+
+//PAQUETE: sabe decir  si esta pagado
 object paquete{
     var pagado = true
     method pagado(){
@@ -88,6 +107,7 @@ object paquete{
     }
 }
 
+//DESTINO: saben decir si un mensajero puede llevar un paquete
 object brooklyn{
     method llevar(mensajero){ //booleano
         return mensajero.peso() <= 1000
