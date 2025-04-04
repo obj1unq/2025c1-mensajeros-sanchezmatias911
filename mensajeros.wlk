@@ -1,29 +1,40 @@
 object entrega {
     method puedeEntregar(mensajero,destino){
-        destino.llevar(mensajero)
+        return destino.llevar(mensajero) //bool
     }
 }
+/*
+    Lo que entendi es que:
+        -neo solo puede llamar si el paquete esta pagado para cargar credito
+        -chuck puede llamar siempre
+        -lincoln nunca podra llamar aunque el paquete este pago
+
+*/
 
 
 object chucknorris{
+
     method peso(){
         return 900
     }
     method llamada(){
         return true
     }
-    method puedeLlevar(paquete){
+    /*method puedeLlevar(paquete){
         return paquete.pagado()
-    }
+    }*/
     method vehiculo(){}
 }
 object neo{
+    
     method peso(){
         return 0
     }
-    method puedeLlevar(paquete){
-        return paquete.pagado() 
-    }
+    /*
+        Pregunta: para llamada() debo consultar si el paquete esta pago, 
+                  ¿neo debe tener una variable que guarde el paquete 
+                  o esto solo se debe hacer si hay mas de un paquete?
+    */
     method llamada(){
         return paquete.pagado() //si el paquete no esta pagado, neo no puede cargar credito por ende no puede llamar 
     }
@@ -33,6 +44,7 @@ object neo{
 object lincolnhawk{ 
     var peso =80
     var vehiculo = bicicleta 
+    
    
     method peso(_peso){
         peso= _peso
