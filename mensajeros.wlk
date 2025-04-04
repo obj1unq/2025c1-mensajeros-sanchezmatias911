@@ -128,3 +128,8 @@ object matrix{
         return mensajero.llamada()
     }
 }
+/*
+    PREGUNTA: Como brooklyn y matrix solo tienen un metodo
+    que retorna un booleano, no considere necesario guardar al mensajero
+    como variable.¿esto esta bien?
+*/
