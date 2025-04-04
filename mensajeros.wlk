@@ -1,4 +1,5 @@
 object entrega {
+
     method puedeEntregar(mensajero,destino){
         return destino.llevar(mensajero) //bool
     }
@@ -21,6 +22,7 @@ object chucknorris{
     method peso(){
         return 900
     }
+
     method llamada(){
         return true
     }
@@ -45,10 +47,12 @@ object neo{
     method llamada(){
         return paquete.pagado() //si el paquete no esta pagado, neo no puede cargar credito por ende no puede llamar 
     }
+
     method vehiculo(){}//lo mismo que chuck
 }
 
 object lincolnhawk{ 
+
     var peso =80
     var vehiculo = bicicleta 
     
@@ -80,10 +84,12 @@ object bicicleta{
     
 }
 object camion {
-    var acoplado =1
+    var acoplado = 1
+
     method peso(){
         return 500 + (acoplado*500)
     }
+
     method acoplado(_acoplado){
         acoplado = _acoplado
     }
@@ -99,9 +105,11 @@ object camion {
 //PAQUETE: sabe decir  si esta pagado
 object paquete{
     var pagado = true
+
     method pagado(){
         return pagado
     }
+
     method pagado(_pagado){
         pagado = _pagado
     }
@@ -109,11 +117,13 @@ object paquete{
 
 //DESTINO: saben decir si un mensajero puede llevar un paquete
 object brooklyn{
+
     method llevar(mensajero){ //booleano
         return mensajero.peso() <= 1000
     }
 }
 object matrix{
+    
     method llevar(mensajero){//booleano
         return mensajero.llamada()
     }
